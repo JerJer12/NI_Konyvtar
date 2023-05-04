@@ -69,5 +69,14 @@ namespace LibraryApplication.Controllers
 
             return this.Ok(result);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] User user)
+        {
+            this._libraryContext.Users.Add(user);
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.Ok();
+        }
     }
 }
