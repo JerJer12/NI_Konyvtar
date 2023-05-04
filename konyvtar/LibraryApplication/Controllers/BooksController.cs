@@ -88,5 +88,21 @@ namespace LibraryApplication.Controllers
 
             return this.NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var existingBook = await this._libraryContext.Books.FindAsync(id);
+
+            if (existingBook is null)
+            {
+                return this.NotFound();
+            }
+
+            this._libraryContext.Books.Remove(existingBook);
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.NoContent();
+        }
     }
 }
