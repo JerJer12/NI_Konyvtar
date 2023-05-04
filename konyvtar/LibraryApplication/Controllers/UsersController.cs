@@ -102,5 +102,21 @@ namespace LibraryApplication.Controllers
 
             return this.NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var existingUser = await this._libraryContext.Users.FindAsync(id);
+
+            if (existingUser is null)
+            {
+                return this.NotFound();
+            }
+
+            this._libraryContext.Users.Remove(existingUser);
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.NoContent();
+        }
     }
 }
