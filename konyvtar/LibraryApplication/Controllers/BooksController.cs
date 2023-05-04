@@ -54,5 +54,14 @@ namespace LibraryApplication.Controllers
 
             return this.Ok(book);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Book book)
+        {
+            this._libraryContext.Books.Add(book);
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.Ok();
+        }
     }
 }
