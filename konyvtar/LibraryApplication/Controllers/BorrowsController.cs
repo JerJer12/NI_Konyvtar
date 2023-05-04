@@ -77,5 +77,30 @@ namespace LibraryApplication.Controllers
 
             return this.Ok();
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Borrow borrow)
+        {
+            if (id != borrow.BorrowNumber)
+            {
+                return this.BadRequest();
+            }
+
+            var existingBorrow = await this._libraryContext.Borrows.FindAsync(id);
+
+            if (existingBorrow is null)
+            {
+                return this.NotFound();
+            }
+
+            existingBorrow.BorrowDate = borrow.BorrowDate;
+            existingBorrow.ReturnDate = borrow.ReturnDate;
+            existingBorrow.InventoryNumber = borrow.InventoryNumber;
+            existingBorrow.ReaderNumber = borrow.ReaderNumber;
+
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.NoContent();
+        }
     }
 }
