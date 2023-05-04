@@ -24,5 +24,50 @@ namespace LibraryApplication.Controllers
             var users = await this._libraryContext.Users.ToListAsync();
             return this.Ok(users);
         }
+
+        /// <summary>
+        ///     Gets a single users data.
+        /// </summary>
+        /// <param name="id">Users id.</param>
+        /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
+        [HttpGet("{id}")]
+        public async Task<ActionResult> Get(int id)
+        {
+            var user = await this._libraryContext.Users.FindAsync(id);
+
+            if (user is null)
+            {
+                return this.NotFound();
+            }
+
+            var borrowedBooks = await this._libraryContext.Users
+                .Where(u => u.ReaderNumber == id)
+                .Join(
+                    this._libraryContext.Borrows,
+                    user => user.ReaderNumber,
+                    borrow => borrow.ReaderNumber,
+                    (user, borrow) => new { User = user, Borrow = borrow })
+                .Join(
+                    this._libraryContext.Books,
+                    b => b.Borrow.InventoryNumber,
+                    book => book.InventoryNumber,
+                    (b, book) => new { Book = book, Borrow = b.Borrow })
+                .Select(b => new Dictionary<string, object>
+                {
+                    { "Title", b.Book.Title },
+                    { "ReturnDate", b.Borrow.ReturnDate },
+                }).ToListAsync();
+
+            var result = new Dictionary<string, object>
+            {
+                { "Id", user.ReaderNumber },
+                { "Name", user.Name },
+                { "Address", user.Address },
+                { "BirthDate", user.BirthDate },
+                { "BorrowedBooks", borrowedBooks },
+            };
+
+            return this.Ok(result);
+        }
     }
 }
