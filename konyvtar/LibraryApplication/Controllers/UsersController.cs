@@ -78,5 +78,29 @@ namespace LibraryApplication.Controllers
 
             return this.Ok();
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] User user)
+        {
+            if (id != user.ReaderNumber)
+            {
+                return this.BadRequest();
+            }
+
+            var existingUser = await this._libraryContext.Users.FindAsync(id);
+
+            if (existingUser is null)
+            {
+                return this.NotFound();
+            }
+
+            existingUser.Name = user.Name;
+            existingUser.Address = user.Address;
+            existingUser.BirthDate = user.BirthDate;
+
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.NoContent();
+        }
     }
 }
