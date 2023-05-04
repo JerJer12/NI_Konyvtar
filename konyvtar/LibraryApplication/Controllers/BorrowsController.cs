@@ -63,5 +63,19 @@ namespace LibraryApplication.Controllers
 
             return this.Ok(result);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(Borrow borrow)
+        {
+            if (this._libraryContext.Borrows.Any(x => x.InventoryNumber == borrow.InventoryNumber))
+            {
+                return this.Conflict();
+            }
+
+            this._libraryContext.Borrows.Add(borrow);
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.Ok();
+        }
     }
 }
