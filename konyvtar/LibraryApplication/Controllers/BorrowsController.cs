@@ -102,5 +102,21 @@ namespace LibraryApplication.Controllers
 
             return this.NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var existingBorrow = await this._libraryContext.Borrows.FindAsync(id);
+
+            if (existingBorrow is null)
+            {
+                return this.NotFound();
+            }
+
+            this._libraryContext.Borrows.Remove(existingBorrow);
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.NoContent();
+        }
     }
 }
