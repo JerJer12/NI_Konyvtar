@@ -63,5 +63,30 @@ namespace LibraryApplication.Controllers
 
             return this.Ok();
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Book book)
+        {
+            if (id != book.InventoryNumber)
+            {
+                return this.BadRequest();
+            }
+
+            var existingBook = await this._libraryContext.Books.FindAsync(id);
+
+            if (existingBook is null)
+            {
+                return this.NotFound();
+            }
+
+            existingBook.Title = book.Title;
+            existingBook.Author = book.Author;
+            existingBook.Publisher = book.Publisher;
+            existingBook.PublicationYear = book.PublicationYear;
+
+            await this._libraryContext.SaveChangesAsync();
+
+            return this.NoContent();
+        }
     }
 }
