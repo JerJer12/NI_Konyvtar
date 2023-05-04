@@ -13,5 +13,12 @@ namespace LibraryApplication.Controllers
         {
             this._libraryContext = libraryContext;
         }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Book>>> Get()
+        {
+            var books = await this._libraryContext.Books.ToListAsync();
+            return this.Ok(books);
+        }
     }
 }
