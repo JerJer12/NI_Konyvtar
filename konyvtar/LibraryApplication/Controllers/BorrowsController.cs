@@ -31,5 +31,37 @@ namespace LibraryApplication.Controllers
                         };
             return this.Ok(borrows);
         }
+
+        [HttpGet("/{name}/borrows")]
+        public async Task<ActionResult<List<Dictionary<string, object>>>> Get(string name)
+        {
+            var user = await this._libraryContext.Users.FirstOrDefaultAsync(u => u.Name == name);
+
+            if (user == null)
+            {
+                return this.NotFound();
+            }
+
+            var result = await this._libraryContext.Users
+                .Where(u => u.Name == name)
+                .Join(
+                    this._libraryContext.Borrows,
+                    user => user.ReaderNumber,
+                    borrow => borrow.ReaderNumber,
+                    (user, borrow) => new { User = user, Borrow = borrow })
+                .Join(
+                    this._libraryContext.Books,
+                    b => b.Borrow.InventoryNumber,
+                    book => book.InventoryNumber,
+                    (b, book) => new { Book = book, Borrow = b.Borrow }
+                )
+                .Select(b => new Dictionary<string, object>
+                {
+                    { "Title", b.Book.Title },
+                    { "ReturnDate", b.Borrow.ReturnDate },
+                }).ToListAsync();
+
+            return this.Ok(result);
+        }
     }
 }
