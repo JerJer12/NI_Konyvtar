@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Xml.Linq;
 
 namespace LibraryApplication.Controllers
 {
@@ -55,6 +54,7 @@ namespace LibraryApplication.Controllers
                     book => book.InventoryNumber,
                     (b, book) => new { Book = book, Borrow = b.Borrow }
                 )
+                .OrderBy(b => b.Borrow.ReturnDate)
                 .Select(b => new Dictionary<string, object>
                 {
                     { "Title", b.Book.Title },
