@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LibraryApplication.Contracts;
+using Microsoft.EntityFrameworkCore;
 
-namespace LibraryApplication
+namespace LibraryApplication.Api
 {
     public class LibraryContext : DbContext
     {

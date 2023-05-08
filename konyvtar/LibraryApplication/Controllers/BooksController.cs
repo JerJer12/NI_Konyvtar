@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LibraryApplication.Contracts;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryApplication.Controllers
+namespace LibraryApplication.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
