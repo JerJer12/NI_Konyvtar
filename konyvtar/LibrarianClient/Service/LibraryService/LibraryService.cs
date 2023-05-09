@@ -1,6 +1,4 @@
 ﻿using System.Net.Http.Json;
-using System.Text.Json;
-using System.Text;
 
 namespace LibrarianClient.Service.LibraryService
 {
@@ -46,6 +44,13 @@ namespace LibrarianClient.Service.LibraryService
         public async Task AddUser(User user)
         {
             var response = await _http.PostAsJsonAsync("http://localhost:7081/users", user);
+            var result = await response.Content.ReadFromJsonAsync<List<User>>();
+            users = result;
+        }
+
+        public async Task DeleteUser(int id)
+        {
+            var response = await _http.DeleteAsync($"http://localhost:7081/users/{id}");
             var result = await response.Content.ReadFromJsonAsync<List<User>>();
             users = result;
         }

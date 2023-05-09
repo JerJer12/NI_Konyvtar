@@ -1,5 +1,6 @@
 ﻿@page "/members"
 @inject ILibraryService LibraryService
+@inject NavigationManager NavigationManager
 @using System.Net.Http.Json
 
 <h1>Members</h1>
@@ -17,6 +18,7 @@ else
                 <th>Address</th>
                 <th>Reader Number</th>
                 <th>Birth Date</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -27,27 +29,36 @@ else
                     <td>@user.Address</td>
                     <td>@user.ReaderNumber</td>
                     <td>@user.BirthDate.ToShortDateString()</td>
+                    <td><button class="btn btn-danger" @onclick="@(() => DeleteUser(user.ReaderNumber))">Delete</button></td>
                 </tr>
             }
         </tbody>
     </table>
-    <button @onclick="OpenAddUserForm">Add New User</button>
-
-    @if (showAddUserForm)
-{
-    <h3>Add New User</h3>
-    <div>
-        <label for="firstName">Name:</label>
-        <input type="text" id="firstName" @bind="newUser.Name" />
-
-        <label for="address">Address:</label>
-        <input type="text" id="address" @bind="newUser.Address" />
-
-        <label for="address">Birth:</label>
-        <input type="date" id="address" @bind="newUser.BirthDate" />
-
-        <button @onclick="AddUser">Add User</button>
-        <button @onclick="CancelAdd">Cancel</button>
-    </div>
+    <a href="members/add" class="btn btn-primary">Add New User</a>
 }
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await LibraryService.GetUsers();
+        }
+        catch (Exception ex)
+        {
+                Console.WriteLine($"Failed to retrieve users: {ex.Message}");
+        }
+    }
+
+    private async Task DeleteUser(int readerNumber)
+    {
+        try
+        {
+            await LibraryService.DeleteUser(readerNumber);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to delete user: {ex.Message}");
+        }
+    }
 }

@@ -15,5 +15,7 @@
         Task<User> GetSingleUser(int id);
 
         Task AddUser(User user);
+
+        Task DeleteUser(int id);
     }
 }

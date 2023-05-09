@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LibrarianClient",
+    "\\LibrarianClient\\Service",
+    "\\LibrarianClient\\Service\\LibraryService"
   ],
-  "SelectedNode": "\\LibraryApplication.sln",
+  "SelectedNode": "\\LibrarianClient\\Service\\LibraryService\\LibraryService.cs",
   "PreviewInSolutionExplorer": false
 }

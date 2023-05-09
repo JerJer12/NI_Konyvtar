@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryApplication.Api", "L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryApplication.Contracts", "LibraryApplication.Contracts\LibraryApplication.Contracts.csproj", "{CF334B2E-FFC4-4C57-8413-C340CED10CFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarianClient", "LibrarianClient\LibrarianClient.csproj", "{B68A7013-3157-4151-9627-3FBE18BF88B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibrarianClient", "LibrarianClient\LibrarianClient.csproj", "{B68A7013-3157-4151-9627-3FBE18BF88B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
