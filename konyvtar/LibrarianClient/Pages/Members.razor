@@ -1,0 +1,53 @@
+﻿@page "/members"
+@inject ILibraryService LibraryService
+@using System.Net.Http.Json
+
+<h1>Members</h1>
+
+@if (LibraryService.users == null)
+{
+    <p>Loading users...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Reader Number</th>
+                <th>Birth Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in LibraryService.users)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Address</td>
+                    <td>@user.ReaderNumber</td>
+                    <td>@user.BirthDate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button @onclick="OpenAddUserForm">Add New User</button>
+
+    @if (showAddUserForm)
+{
+    <h3>Add New User</h3>
+    <div>
+        <label for="firstName">Name:</label>
+        <input type="text" id="firstName" @bind="newUser.Name" />
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" @bind="newUser.Address" />
+
+        <label for="address">Birth:</label>
+        <input type="date" id="address" @bind="newUser.BirthDate" />
+
+        <button @onclick="AddUser">Add User</button>
+        <button @onclick="CancelAdd">Cancel</button>
+    </div>
+}
+}

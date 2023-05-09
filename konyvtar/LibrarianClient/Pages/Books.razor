@@ -1,0 +1,50 @@
+﻿@page "/books"
+@inject ILibraryService LibraryService
+@using System.Net.Http.Json
+
+<h1>Books</h1>
+
+@if (LibraryService.books == null)
+{
+    <p>Loading books...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Inventory Number</th>
+                <th>Publication Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in LibraryService.books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.Publisher</td>
+                    <td>@book.InventoryNumber</td>
+                    <td>@book.PublicationYear</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await LibraryService.GetBooks();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to retrieve books: {ex.Message}");
+        }
+    }
+}
