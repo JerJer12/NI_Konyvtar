@@ -9,6 +9,7 @@
 @if (user != null)
 {
     <EditForm Model="@user" OnValidSubmit="SaveUser">
+        <DataAnnotationsValidator/>
         <dl>
             <dt>Name:</dt>
             <dd>
@@ -43,7 +44,7 @@ else
     <p>Loading member details...</p>
 }
 
-@if (borrowings!= null)
+@if (borrowings != null)
 {
     <div style="margin-top: 20px;"></div>
     <h3>Borrowings</h3>
@@ -58,8 +59,8 @@ else
         <tbody>
             @foreach (var borrowing in borrowings)
             {
-                <tr>
-                    <td>Title..</td>
+                <tr class="@GetBorrowingRowClass(borrowing.ReturnDate)">
+                    <td>@borrowing.Title</td>
                     <td>@borrowing.BorrowDate.ToShortDateString()</td>
                     <td>@borrowing.ReturnDate.ToShortDateString()</td>
                 </tr>
@@ -73,7 +74,6 @@ else
     public int Id { get; set; }
 
     private User user;
-
     private List<Borrow>? borrowings;
 
     protected override async Task OnInitializedAsync()
@@ -84,7 +84,7 @@ else
 
     private async Task SaveUser()
     {
-        await LibraryService.UpdateUser(Id,user);
+        await LibraryService.UpdateUser(Id, user);
     }
 
     private async Task DeleteUser()
@@ -92,9 +92,14 @@ else
         await LibraryService.DeleteUser(user.ReaderNumber);
         NavigationManager.NavigateTo("/members");
     }
+
     private async Task LoadBorrowings()
     {
         borrowings = await LibraryService.GetBorrowsForUser(Id);
+    }
 
+    private string GetBorrowingRowClass(DateTime returnDate)
+    {
+        return returnDate < DateTime.Now ? "table-danger" : string.Empty;
     }
 }

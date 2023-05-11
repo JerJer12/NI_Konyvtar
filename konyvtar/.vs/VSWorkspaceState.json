@@ -6,6 +6,6 @@
     "\\LibrarianClient\\Service",
     "\\LibrarianClient\\Service\\LibraryService"
   ],
-  "SelectedNode": "\\LibrarianClient\\Pages\\Members.razor",
+  "SelectedNode": "\\LibrarianClient\\Pages\\UserDetails.razor",
   "PreviewInSolutionExplorer": false
 }

@@ -18,17 +18,23 @@ else
                 <th>Publisher</th>
                 <th>Inventory Number</th>
                 <th>Publication Year</th>
+                <th>Status</th>
+                <th>Borrower Name</th>
+                <th>Return Date</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var book in books)
+            @for (int i = 0; i < books.Count; i++)
             {
                 <tr>
-                    <td>@book.Title</td>
-                    <td>@book.Author</td>
-                    <td>@book.Publisher</td>
-                    <td>@book.InventoryNumber</td>
-                    <td>@book.PublicationYear</td>
+                    <td>@books[i].Title</td>
+                    <td>@books[i].Author</td>
+                    <td>@books[i].Publisher</td>
+                    <td>@books[i].InventoryNumber</td>
+                    <td>@books[i].PublicationYear</td>
+                    <td>@bookDetails[i].status</td>
+                    <td>@bookDetails[i].borrowerName</td>
+                    <td>@bookDetails[i].returnDate</td>
                 </tr>
             }
         </tbody>
@@ -37,16 +43,30 @@ else
 
 @code {
     private List<Book> books;
+    private List<BookDetails> bookDetails = new List<BookDetails>();
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
             books = await LibraryService.GetBooks();
+            await GetBookDetails();
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Failed to retrieve books: {ex.Message}");
+        }
+    }
+
+    private async Task GetBookDetails()
+    {
+
+        foreach (var book in books)
+        {
+            BookDetails details = await LibraryService.GetSingleBook(book.InventoryNumber);
+            Console.WriteLine(details.borrowerName);
+            Console.WriteLine(details.status);
+            bookDetails.Add(details);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using Microsoft.AspNetCore.Components;
+using System.Net.Http.Json;
 
 namespace LibrarianClient.Service.LibraryService
 {
@@ -11,7 +12,7 @@ namespace LibrarianClient.Service.LibraryService
 
         public Task<List<Book>?> GetBooks() => _http.GetFromJsonAsync<List<Book>>("https://localhost:7081/books");
 
-        public Task<Book> GetSingleBook(int id) => _http.GetFromJsonAsync<Book>($"https://localhost:7081/books/{id}");
+        public Task<BookDetails> GetSingleBook(int id) => _http.GetFromJsonAsync<BookDetails>($"https://localhost:7081/books/{id}");
 
         public Task<List<Borrow>?> GetBorrows() => _http.GetFromJsonAsync<List<Borrow>>($"https://localhost:7081/borrows");
 

@@ -7,7 +7,7 @@
 
         Task<List<Book>?> GetBooks();
 
-        public Task<Book> GetSingleBook(int id);
+        public Task<BookDetails> GetSingleBook(int id);
 
         Task<List<Borrow>?> GetBorrows();
 

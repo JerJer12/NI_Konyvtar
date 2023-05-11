@@ -14,12 +14,15 @@ namespace LibraryApplication.Contracts
         [Required]
         public DateTime BorrowDate { get; set; }
 
+        [Required]
         [DateComparison("BorrowDate")]
         public DateTime ReturnDate { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BorrowNumber { get; set; }
+
+        public String Title { get; set; }
     }
 }
 
