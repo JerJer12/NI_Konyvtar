@@ -9,50 +9,22 @@ namespace LibrarianClient.Service.LibraryService
             _http = http;
         }
 
-        public List<User> users { get; set; } = new List<User>();
-        public List<Book> books { get; set; } = new List<Book>();
-        public List<Borrow> borrows { get; set; } = new List<Borrow>();
+        public Task<List<Book>?> GetBooks() => _http.GetFromJsonAsync<List<Book>>("https://localhost:7081/books");
 
-        public async Task GetBooks()
-        {
-            var result = await _http.GetFromJsonAsync<List<Book>>("https://localhost:7081/books");
-            if (result != null)
-            {
-                books = result;
-            }
-        }
+        public Task<Book> GetSingleBook(int id) => _http.GetFromJsonAsync<Book>($"https://localhost:7081/books/{id}");
 
-        public Task GetBorrows()
-        {
-            throw new NotImplementedException();
-        }
+        public Task<List<Borrow>?> GetBorrows() => _http.GetFromJsonAsync<List<Borrow>>($"https://localhost:7081/borrows");
 
-        public Task<User> GetSingleUser(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public Task<List<Borrow>?> GetBorrowsForUser(int id) => _http.GetFromJsonAsync<List<Borrow>>($"https://localhost:7081/{id}/borrows");
 
-        public async Task GetUsers()
-        {
-            var result = await _http.GetFromJsonAsync<List<User>>("https://localhost:7081/users");
-            if (result != null)
-            {
-                users = result;
-            }
-        }
+        public Task<User?> GetSingleUser(int id) => _http.GetFromJsonAsync<User>($"https://localhost:7081/users/{id}");
 
-        public async Task AddUser(User user)
-        {
-            var response = await _http.PostAsJsonAsync("http://localhost:7081/users", user);
-            var result = await response.Content.ReadFromJsonAsync<List<User>>();
-            users = result;
-        }
+        public Task<List<User>?> GetUsers() => _http.GetFromJsonAsync<List<User>>("https://localhost:7081/users");
 
-        public async Task DeleteUser(int id)
-        {
-            var response = await _http.DeleteAsync($"http://localhost:7081/users/{id}");
-            var result = await response.Content.ReadFromJsonAsync<List<User>>();
-            users = result;
-        }
+        public Task AddUser(User user) => _http.PostAsJsonAsync("http://localhost:7081/users", user);
+
+        public Task UpdateUser(int id, User user) => _http.PutAsJsonAsync($"http://localhost:7081/users/{id}", user);
+
+        public Task DeleteUser(int id) => _http.DeleteAsync($"http://localhost:7081/users/{id}");
     }
 }

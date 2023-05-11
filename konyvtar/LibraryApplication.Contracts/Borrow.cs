@@ -14,7 +14,6 @@ namespace LibraryApplication.Contracts
         [Required]
         public DateTime BorrowDate { get; set; }
 
-        [Required]
         [DateComparison("BorrowDate")]
         public DateTime ReturnDate { get; set; }
 

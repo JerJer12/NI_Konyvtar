@@ -4,7 +4,7 @@
 
 <h1>Books</h1>
 
-@if (LibraryService.books == null)
+@if (books == null)
 {
     <p>Loading books...</p>
 }
@@ -21,7 +21,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var book in LibraryService.books)
+            @foreach (var book in books)
             {
                 <tr>
                     <td>@book.Title</td>
@@ -36,11 +36,13 @@ else
 }
 
 @code {
+    private List<Book> books;
+
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            await LibraryService.GetBooks();
+            books = await LibraryService.GetBooks();
         }
         catch (Exception ex)
         {

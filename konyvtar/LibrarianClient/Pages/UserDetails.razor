@@ -1,0 +1,100 @@
+﻿@page "/members/{id:int}"
+@inject ILibraryService LibraryService
+@inject NavigationManager NavigationManager
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Forms
+
+<h3>Member Details</h3>
+
+@if (user != null)
+{
+    <EditForm Model="@user" OnValidSubmit="SaveUser">
+        <dl>
+            <dt>Name:</dt>
+            <dd>
+                <InputText id="name" @bind-Value="@user.Name" />
+                <ValidationMessage For="@(() => user.Name)" />
+            </dd>
+
+            <dt>Address:</dt>
+            <dd>
+                <InputText id="address" @bind-Value="@user.Address" />
+                <ValidationMessage For="@(() => user.Address)" />
+            </dd>
+
+            <dt>Reader Number:</dt>
+            <dd>@user.ReaderNumber</dd>
+
+            <dt>Birth Date:</dt>
+            <dd>
+                <InputDate id="birthDate" @bind-Value="@user.BirthDate" />
+                <ValidationMessage For="@(() => user.BirthDate)" />
+            </dd>
+        </dl>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-danger" @onclick="DeleteUser">Delete</button>
+        </div>
+    </EditForm>
+}
+else
+{
+    <p>Loading member details...</p>
+}
+
+@if (borrowings!= null)
+{
+    <div style="margin-top: 20px;"></div>
+    <h3>Borrowings</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Borrow Date</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var borrowing in borrowings)
+            {
+                <tr>
+                    <td>Title..</td>
+                    <td>@borrowing.BorrowDate.ToShortDateString()</td>
+                    <td>@borrowing.ReturnDate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private User user;
+
+    private List<Borrow>? borrowings;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await LibraryService.GetSingleUser(Id);
+        await LoadBorrowings();
+    }
+
+    private async Task SaveUser()
+    {
+        await LibraryService.UpdateUser(Id,user);
+    }
+
+    private async Task DeleteUser()
+    {
+        await LibraryService.DeleteUser(user.ReaderNumber);
+        NavigationManager.NavigateTo("/members");
+    }
+    private async Task LoadBorrowings()
+    {
+        borrowings = await LibraryService.GetBorrowsForUser(Id);
+
+    }
+}

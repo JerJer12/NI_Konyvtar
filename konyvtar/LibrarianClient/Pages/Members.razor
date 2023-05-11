@@ -5,7 +5,7 @@
 
 <h1>Members</h1>
 
-@if (LibraryService.users == null)
+@if (users == null)
 {
     <p>Loading users...</p>
 }
@@ -18,18 +18,20 @@ else
                 <th>Address</th>
                 <th>Reader Number</th>
                 <th>Birth Date</th>
-                <th>Action</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in LibraryService.users)
+            @foreach (var user in users)
             {
                 <tr>
                     <td>@user.Name</td>
                     <td>@user.Address</td>
                     <td>@user.ReaderNumber</td>
                     <td>@user.BirthDate.ToShortDateString()</td>
-                    <td><button class="btn btn-danger" @onclick="@(() => DeleteUser(user.ReaderNumber))">Delete</button></td>
+                    <td>
+                        <a href="members/@user.ReaderNumber" class="btn btn-primary">View Details</a>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -38,27 +40,17 @@ else
 }
 
 @code {
+    private List<User>? users;
+
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            await LibraryService.GetUsers();
+            users = await LibraryService.GetUsers();
         }
         catch (Exception ex)
         {
-                Console.WriteLine($"Failed to retrieve users: {ex.Message}");
-        }
-    }
-
-    private async Task DeleteUser(int readerNumber)
-    {
-        try
-        {
-            await LibraryService.DeleteUser(readerNumber);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Failed to delete user: {ex.Message}");
+            Console.WriteLine($"Failed to retrieve users: {ex.Message}");
         }
     }
 }

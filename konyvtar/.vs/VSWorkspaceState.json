@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\LibrarianClient",
+    "\\LibrarianClient\\Pages",
     "\\LibrarianClient\\Service",
     "\\LibrarianClient\\Service\\LibraryService"
   ],
-  "SelectedNode": "\\LibrarianClient\\Service\\LibraryService\\LibraryService.cs",
+  "SelectedNode": "\\LibrarianClient\\Pages\\Members.razor",
   "PreviewInSolutionExplorer": false
 }

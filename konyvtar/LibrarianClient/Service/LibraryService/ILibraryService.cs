@@ -2,19 +2,22 @@
 {
     public interface ILibraryService
     {
-        List<User> users { get; set; }
-        List<Book> books { get; set; }
-        List<Borrow> borrows { get; set; }
 
-        Task GetUsers();
+        Task<List<User>?> GetUsers();
 
-        Task GetBooks();
+        Task<List<Book>?> GetBooks();
 
-        Task GetBorrows();
+        public Task<Book> GetSingleBook(int id);
 
-        Task<User> GetSingleUser(int id);
+        Task<List<Borrow>?> GetBorrows();
+
+        Task<List<Borrow>?> GetBorrowsForUser(int id);
+
+        Task<User?> GetSingleUser(int id);
 
         Task AddUser(User user);
+
+        Task UpdateUser(int id, User user);
 
         Task DeleteUser(int id);
     }

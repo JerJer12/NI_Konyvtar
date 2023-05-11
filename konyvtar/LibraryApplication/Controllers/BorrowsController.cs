@@ -32,10 +32,10 @@ namespace LibraryApplication.Api.Controllers
             return this.Ok(borrows);
         }
 
-        [HttpGet("/{name}/borrows")]
-        public async Task<ActionResult<List<Dictionary<string, object>>>> Get(string name)
+        [HttpGet("/{id}/borrows")]
+        public async Task<ActionResult<List<Dictionary<string, object>>>> Get(int id)
         {
-            var user = await this._libraryContext.Users.FirstOrDefaultAsync(u => u.Name == name);
+            var user = await this._libraryContext.Users.FirstOrDefaultAsync(u => u.ReaderNumber == id);
 
             if (user == null)
             {
@@ -43,7 +43,7 @@ namespace LibraryApplication.Api.Controllers
             }
 
             var result = await this._libraryContext.Users
-                .Where(u => u.Name == name)
+                .Where(u => u.ReaderNumber == id)
                 .Join(
                     this._libraryContext.Borrows,
                     user => user.ReaderNumber,
