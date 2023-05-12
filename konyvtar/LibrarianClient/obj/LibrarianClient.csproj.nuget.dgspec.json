@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {}
+    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {}
   },
   "projects": {
-    "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {
+    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
+        "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
         "projectName": "LibrarianClient",
-        "projectPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
+        "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
         "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-        "outputPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibrarianClient\\obj\\",
+        "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
-                "projectPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
+              "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
+                "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
               }
             }
           }
@@ -52,6 +52,12 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.15, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
             }
           },
           "imports": [
@@ -85,14 +91,14 @@
         }
       }
     },
-    "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
+    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
         "projectName": "LibraryApplication.Contracts",
-        "projectPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+        "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
         "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-        "outputPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",

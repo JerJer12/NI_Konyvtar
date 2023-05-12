@@ -10,3 +10,15 @@ D:\Zsanett\egyetem\c# hazi\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj
 D:\Zsanett\egyetem\c# hazi\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\refint\LibraryApplication.Contracts.dll
 D:\Zsanett\egyetem\c# hazi\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.pdb
 D:\Zsanett\egyetem\c# hazi\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\ref\LibraryApplication.Contracts.dll
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\bin\Debug\net6.0\LibraryApplication.Contracts.deps.json
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\bin\Debug\net6.0\LibraryApplication.Contracts.dll
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\bin\Debug\net6.0\LibraryApplication.Contracts.pdb
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.csproj.AssemblyReference.cache
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.AssemblyInfoInputs.cache
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.AssemblyInfo.cs
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.dll
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\refint\LibraryApplication.Contracts.dll
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.pdb
+C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\ref\LibraryApplication.Contracts.dll

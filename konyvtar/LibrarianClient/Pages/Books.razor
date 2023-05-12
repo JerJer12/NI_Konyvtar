@@ -33,8 +33,8 @@ else
                     <td>@books[i].InventoryNumber</td>
                     <td>@books[i].PublicationYear</td>
                     <td>@bookDetails[i].status</td>
-                    <td>@bookDetails[i].borrowerName</td>
-                    <td>@bookDetails[i].returnDate</td>
+                    <td>@(bookDetails[i].status == "in" ? "-" : bookDetails[i].borrowerName)</td>
+                    <td>@(bookDetails[i].status == "in" ? "-" : bookDetails[i].returnDate.ToString("yyyy-MM-dd"))</td>
                 </tr>
             }
         </tbody>
@@ -44,6 +44,7 @@ else
 @code {
     private List<Book> books;
     private List<BookDetails> bookDetails = new List<BookDetails>();
+    private List<string> debugMessages = new List<string>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -60,12 +61,9 @@ else
 
     private async Task GetBookDetails()
     {
-
         foreach (var book in books)
         {
             BookDetails details = await LibraryService.GetSingleBook(book.InventoryNumber);
-            Console.WriteLine(details.borrowerName);
-            Console.WriteLine(details.status);
             bookDetails.Add(details);
         }
     }

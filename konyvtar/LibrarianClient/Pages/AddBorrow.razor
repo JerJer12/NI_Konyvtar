@@ -1,0 +1,82 @@
+﻿@page "/members/{id:int}/addBorrow"
+@inject ILibraryService LibraryService
+@inject NavigationManager NavigationManager
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Forms
+
+<h3>Add Borrow</h3>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+<EditForm Model="@newBorrow" OnValidSubmit="SaveBorrow">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+        <label for="inventoryNumber">Inventory Number</label>
+        <InputNumber id="inventoryNumber" @bind-Value="@newBorrow.InventoryNumber" class="form-control" required />
+        <ValidationMessage For="@(() => newBorrow.InventoryNumber)" />
+    </div>
+
+    <div class="form-group">
+        <label for="borrowDate">Borrow Date</label>
+        <InputDate id="borrowDate" @bind-Value="@newBorrow.BorrowDate" class="form-control" required />
+        <ValidationMessage For="@(() => newBorrow.BorrowDate)" />
+    </div>
+
+    <div class="form-group">
+        <label for="returnDate">Return Date</label>
+        <InputDate id="returnDate" @bind-Value="@newBorrow.ReturnDate" class="form-control" required />
+        <ValidationMessage For="@(() => newBorrow.ReturnDate)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Borrow newBorrow = new Borrow();
+    private BookDetails bookDetails;
+    private string errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        newBorrow.BorrowDate = DateTime.Today;
+        newBorrow.ReturnDate = DateTime.Today.AddMonths(1);
+    }
+
+    private async Task CheckBookStatus()
+    {
+        try
+        {
+            bookDetails = await LibraryService.GetSingleBook(newBorrow.InventoryNumber);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+    }
+
+    private async Task SaveBorrow()
+    {
+        await CheckBookStatus();
+
+        if (bookDetails != null && bookDetails.status == "in")
+        {
+            newBorrow.ReaderNumber = Id;
+
+            await LibraryService.AddBorrow(newBorrow);
+            NavigationManager.NavigateTo($"/members/{Id}");
+        }
+        else
+        {
+            errorMessage = "The book is not available for borrowing.";
+        }
+    }
+}

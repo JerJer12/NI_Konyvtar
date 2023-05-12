@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CXwQiBflUGsOtNn8hNeP8N2w12q5c31FKB/8Ey4AXVakD0Hdg/uqD/Nos4NhgqlzWkleqpkiKvUSPdS+7ndCdw==",
+  "dgSpecHash": "bgCuE8LsZRNYYCsGaNqAuVT+8e4HtDTEjNlixIPhnDSQ4ClcbaM/x4PlHe9lbL5xQxHdaXpTR1RjMHMHXfJRaQ==",
   "success": true,
-  "projectFilePath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
+  "projectFilePath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zsani\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\zsani\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

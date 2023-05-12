@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
       "projectName": "LibraryApplication.Contracts",
-      "projectPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+      "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
       "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-      "outputPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
+      "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",

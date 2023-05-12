@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj": {}
+    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj": {}
   },
   "projects": {
-    "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
+    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
         "projectName": "LibraryApplication.Contracts",
-        "projectPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+        "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
         "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-        "outputPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
+        "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj": {
+    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
+        "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
         "projectName": "LibraryApplication.Api",
-        "projectPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
+        "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
         "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-        "outputPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication\\obj\\",
+        "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
-                "projectPath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
+              "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
+                "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
               }
             }
           }

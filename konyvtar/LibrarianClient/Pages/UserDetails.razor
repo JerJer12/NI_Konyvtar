@@ -8,36 +8,23 @@
 
 @if (user != null)
 {
-    <EditForm Model="@user" OnValidSubmit="SaveUser">
-        <DataAnnotationsValidator/>
-        <dl>
-            <dt>Name:</dt>
-            <dd>
-                <InputText id="name" @bind-Value="@user.Name" />
-                <ValidationMessage For="@(() => user.Name)" />
-            </dd>
+    <dl>
+        <dt>Name:</dt>
+        <dd>@user.Name</dd>
 
-            <dt>Address:</dt>
-            <dd>
-                <InputText id="address" @bind-Value="@user.Address" />
-                <ValidationMessage For="@(() => user.Address)" />
-            </dd>
+        <dt>Address:</dt>
+        <dd>@user.Address</dd>
 
-            <dt>Reader Number:</dt>
-            <dd>@user.ReaderNumber</dd>
+        <dt>Reader Number:</dt>
+        <dd>@user.ReaderNumber</dd>
 
-            <dt>Birth Date:</dt>
-            <dd>
-                <InputDate id="birthDate" @bind-Value="@user.BirthDate" />
-                <ValidationMessage For="@(() => user.BirthDate)" />
-            </dd>
-        </dl>
+        <dt>Birth Date:</dt>
+        <dd>@user.BirthDate.ToShortDateString()</dd>
+    </dl>
 
-        <div>
-            <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-danger" @onclick="DeleteUser">Delete</button>
-        </div>
-    </EditForm>
+    <div>
+        <button type="button" class="btn btn-primary" @onclick="EditUser">Edit</button>
+    </div>
 }
 else
 {
@@ -46,8 +33,11 @@ else
 
 @if (borrowings != null)
 {
-    <div style="margin-top: 20px;"></div>
-    <h3>Borrowings</h3>
+    <div style="margin-top: 25px;"></div>
+    <div class="d-flex justify-content-between mb-3">
+        <h3>Borrowings</h3>
+        <button type="button" class="btn btn-primary" @onclick="AddBorrow">Add New</button>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -57,7 +47,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var borrowing in borrowings)
+            @foreach(var borrowing in borrowings)
             {
                 <tr class="@GetBorrowingRowClass(borrowing.ReturnDate)">
                     <td>@borrowing.Title</td>
@@ -75,22 +65,12 @@ else
 
     private User user;
     private List<Borrow>? borrowings;
+    private List<BorrowDetails>? borrowDetails;
 
     protected override async Task OnInitializedAsync()
     {
         user = await LibraryService.GetSingleUser(Id);
         await LoadBorrowings();
-    }
-
-    private async Task SaveUser()
-    {
-        await LibraryService.UpdateUser(Id, user);
-    }
-
-    private async Task DeleteUser()
-    {
-        await LibraryService.DeleteUser(user.ReaderNumber);
-        NavigationManager.NavigateTo("/members");
     }
 
     private async Task LoadBorrowings()
@@ -101,5 +81,15 @@ else
     private string GetBorrowingRowClass(DateTime returnDate)
     {
         return returnDate < DateTime.Now ? "table-danger" : string.Empty;
+    }
+
+    private void EditUser()
+    {
+        NavigationManager.NavigateTo($"/members/{Id}/edit");
+    }
+
+    private void AddBorrow()
+    {
+        NavigationManager.NavigateTo($"/members/{Id}/addBorrow");
     }
 }

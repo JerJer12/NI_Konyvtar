@@ -59,6 +59,7 @@ namespace LibraryApplication.Api.Controllers
                 .Select(b => new Dictionary<string, object>
                 {
                     { "Title", b.Book.Title },
+                    { "BorrowDate", b.Borrow.BorrowDate },
                     { "ReturnDate", b.Borrow.ReturnDate },
                 }).ToListAsync();
 

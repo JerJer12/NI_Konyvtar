@@ -22,7 +22,7 @@ namespace LibraryApplication.Contracts
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BorrowNumber { get; set; }
 
-        public String Title { get; set; }
+        public String? Title { get; set; }
     }
 }
 

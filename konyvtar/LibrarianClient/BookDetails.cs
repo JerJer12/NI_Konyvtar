@@ -2,8 +2,8 @@
 {
     public class BookDetails
     {
-        public String status;
-        public String borrowerName;
-        public DateTime returnDate;
+        public string status { get; set; }
+        public string borrowerName { get; set; }
+        public DateTime returnDate { get; set; }
     }
 }

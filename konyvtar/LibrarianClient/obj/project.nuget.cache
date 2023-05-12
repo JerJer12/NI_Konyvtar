@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DvMHZXJ4Mbk6ITOtXPqMA+xnMvehdG2c4UkkMzvkAoxCVRyivgSVP3P4n2uYX4XUVMROJ5QaO1S6KgSB+RlELQ==",
+  "dgSpecHash": "ISL/SM9Z5iHxYV8Enswwh8ij9lEwXwXIGBDeS9QyjiPAxL+ZZDVKzXCRby6I+RLb7m8NiN8r/hPl0UKTAG5qdw==",
   "success": true,
-  "projectFilePath": "D:\\Zsanett\\egyetem\\c# hazi\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
+  "projectFilePath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zsani\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.15\\microsoft.aspnetcore.authorization.6.0.15.nupkg.sha512",
     "C:\\Users\\zsani\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.15\\microsoft.aspnetcore.components.6.0.15.nupkg.sha512",
@@ -28,6 +28,7 @@
     "C:\\Users\\zsani\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\zsani\\.nuget\\packages\\microsoft.jsinterop\\6.0.15\\microsoft.jsinterop.6.0.15.nupkg.sha512",
     "C:\\Users\\zsani\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.15\\microsoft.jsinterop.webassembly.6.0.15.nupkg.sha512",
+    "C:\\Users\\zsani\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512",
     "C:\\Users\\zsani\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\zsani\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\zsani\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

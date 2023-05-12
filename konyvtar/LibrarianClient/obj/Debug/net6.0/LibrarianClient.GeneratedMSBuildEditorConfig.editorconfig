@@ -9,45 +9,53 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = LibrarianClient
 build_property.RootNamespace = LibrarianClient
-build_property.ProjectDir = D:\Zsanett\egyetem\c# hazi\NI_Konyvtar\konyvtar\LibrarianClient\
+build_property.ProjectDir = C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibrarianClient\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Zsanett\egyetem\c# hazi\NI_Konyvtar\konyvtar\LibrarianClient
+build_property.MSBuildProjectDirectory = C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibrarianClient
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/App.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/Pages/AddUser.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Pages/AddBorrow.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQm9ycm93LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Pages/AddUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVXNlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/Pages/Books.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Pages/Books.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/Pages/Index.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Pages/EditUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFVzZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/Pages/Members.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Pages/Members.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/Pages/UserDetails.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Pages/UserDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/_Imports.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/Shared/MainLayout.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-lq342eg5js
 
-[D:/Zsanett/egyetem/c\# hazi/NI_Konyvtar/konyvtar/LibrarianClient/Shared/NavMenu.razor]
+[C:/Users/zsani/Downloads/c\#/projekt/NI_Konyvtar/konyvtar/LibrarianClient/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-m2frol6hvb
