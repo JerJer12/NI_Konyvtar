@@ -61,7 +61,7 @@ namespace LibraryApplication.Api.Controllers
 
             var result = new Dictionary<string, object>
             {
-                { "Id", user.ReaderNumber },
+                { "ReaderNumber", user.ReaderNumber },
                 { "Name", user.Name },
                 { "Address", user.Address },
                 { "BirthDate", user.BirthDate },

@@ -44,15 +44,19 @@ else
                 <th>Title</th>
                 <th>Borrow Date</th>
                 <th>Return Date</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var borrowing in borrowings)
+            @foreach (var borrowing in borrowings)
             {
                 <tr class="@GetBorrowingRowClass(borrowing.ReturnDate)">
                     <td>@borrowing.Title</td>
                     <td>@borrowing.BorrowDate.ToShortDateString()</td>
                     <td>@borrowing.ReturnDate.ToShortDateString()</td>
+                    <td>
+                        <a href="#" class="btn btn-danger" @onclick="(() => DeleteBorrowing(borrowing.BorrowNumber))">Received</a>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -65,7 +69,6 @@ else
 
     private User user;
     private List<Borrow>? borrowings;
-    private List<BorrowDetails>? borrowDetails;
 
     protected override async Task OnInitializedAsync()
     {
@@ -91,5 +94,11 @@ else
     private void AddBorrow()
     {
         NavigationManager.NavigateTo($"/members/{Id}/addBorrow");
+    }
+
+    private async Task DeleteBorrowing(int borrowingId)
+    {
+        await LibraryService.DeleteBorrow(borrowingId);
+        NavigationManager.NavigateTo($"/members/{Id}");
     }
 }

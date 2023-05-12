@@ -13,9 +13,9 @@
 
         Task<List<Borrow>?> GetBorrowsForUser(int id);
 
-        Task<BorrowDetails> GetSingleBorrow(int id);
-
         Task AddBorrow(Borrow borrow);
+
+        Task DeleteBorrow(int id);
 
         Task<User?> GetSingleUser(int id);
 

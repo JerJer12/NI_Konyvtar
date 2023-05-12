@@ -54,6 +54,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         user = await LibraryService.GetSingleUser(Id);
+        Console.WriteLine(user.ReaderNumber);
     }
 
     private async Task SaveUser()
@@ -64,12 +65,13 @@ else
 
     private async Task DeleteUser()
     {
+        Console.WriteLine(user.ReaderNumber);
         await LibraryService.DeleteUser(user.ReaderNumber);
         NavigationManager.NavigateTo("/members");
     }
 
     private void CancelEdit()
     {
-        NavigationManager.NavigateTo($"/members/{Id}");
+        NavigationManager.NavigateTo($"/members/{@user.ReaderNumber}");
     }
 }

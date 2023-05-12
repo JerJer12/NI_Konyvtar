@@ -18,9 +18,9 @@ namespace LibrarianClient.Service.LibraryService
 
         public Task<List<Borrow>?> GetBorrowsForUser(int id) => _http.GetFromJsonAsync<List<Borrow>>($"https://localhost:7081/{id}/borrows");
 
-        public Task<BorrowDetails> GetSingleBorrow(int id) => _http.GetFromJsonAsync<BorrowDetails>($"https://localhost:7081/borrows/{id}");
-
         public Task AddBorrow(Borrow borrow) => _http.PostAsJsonAsync<Borrow>("https://localhost:7081/borrows", borrow);
+
+        public Task DeleteBorrow(int id) => _http.DeleteAsync($"https://localhost:7081/borrows/{id}");
 
         public Task<User?> GetSingleUser(int id) => _http.GetFromJsonAsync<User>($"https://localhost:7081/users/{id}");
 
