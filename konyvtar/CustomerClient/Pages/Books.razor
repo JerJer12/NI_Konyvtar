@@ -1,5 +1,74 @@
-﻿<h3>Books</h3>
+﻿@page "/books"
+
+@inject ICustomerService CustomerService
+
+@using System.Net.Http.Json
+
+<PageTitle>Books</PageTitle>
+
+<h3>Books</h3>
+
+@if (books == null)
+{
+    <p>Loading books...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Inventory Number</th>
+                <th>Publication Year</th>
+                <th>Status</th>
+                <th>Borrower Name</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < books.Count; i++)
+            {
+                <tr>
+                    <td>@books[i].Title</td>
+                    <td>@books[i].Author</td>
+                    <td>@books[i].Publisher</td>
+                    <td>@books[i].InventoryNumber</td>
+                    <td>@books[i].PublicationYear</td>
+                    <td>@bookDetails[i].status</td>
+                    <td>@(bookDetails[i].status == "in" ? "-" : bookDetails[i].borrowerName)</td>
+                    <td>@(bookDetails[i].status == "in" ? "-" : bookDetails[i].returnDate.ToString("yyyy-MM-dd"))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
+    private List<Book> books;
+    private List<BookDetails> bookDetails = new List<BookDetails>();
+    private List<string> debugMessages = new List<string>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            books = await CustomerService.GetBooks();
+            await GetBookDetails();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to retrieve books: {ex.Message}");
+        }
+    }
+
+    private async Task GetBookDetails()
+    {
+        foreach (var book in books)
+        {
+            BookDetails details = await CustomerService.GetSingleBook(book.InventoryNumber);
+            bookDetails.Add(details);
+        }
+    }
 }
