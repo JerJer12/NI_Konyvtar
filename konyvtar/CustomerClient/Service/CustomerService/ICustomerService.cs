@@ -19,5 +19,8 @@ namespace CustomerClient.Service.CustomerService
 
         Task DeleteBorrow(int id);
 
+        Task<User?> GetSingleUser(int id);
+
+        Task<List<User>?> GetUsers();
     }
 }

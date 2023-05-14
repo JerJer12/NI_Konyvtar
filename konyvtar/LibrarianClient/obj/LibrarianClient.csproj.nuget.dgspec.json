@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {}
+    "C:\\ni_konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {
+    "C:\\ni_konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
+        "projectUniqueName": "C:\\ni_konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
         "projectName": "LibrarianClient",
-        "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
-        "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibrarianClient\\obj\\",
+        "projectPath": "C:\\ni_konyvtar\\konyvtar\\LibrarianClient\\LibrarianClient.csproj",
+        "packagesPath": "C:\\Users\\terem\\.nuget\\packages\\",
+        "outputPath": "C:\\ni_konyvtar\\konyvtar\\LibrarianClient\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\terem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
-                "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
+              "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
+                "projectPath": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
               }
             }
           }
@@ -71,18 +75,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[6.0.16, 6.0.16]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -91,17 +89,21 @@
         }
       }
     },
-    "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
+    "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+        "projectUniqueName": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
         "projectName": "LibraryApplication.Contracts",
-        "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
-        "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
+        "projectPath": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+        "packagesPath": "C:\\Users\\terem\\.nuget\\packages\\",
+        "outputPath": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\terem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -142,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

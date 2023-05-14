@@ -1,10 +1,182 @@
 ﻿@page "/borrowed"
+@inject ICustomerService CustomerService
+
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Forms
 
 
 <PageTitle>Borrowed Books</PageTitle>
 
 <h3>Borrowed</h3>
 
-@code {
 
+<EditForm Model="@user" OnValidSubmit="@AddNewUser">
+    
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name:</label>
+        <div class="col-sm-10">
+            <InputText id="name" @bind-Value="@user.Name" class="form-control" required />
+            <ValidationMessage For="@(() =>user.Name)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">List Borrows</button>
+        </div>
+    </div>
+</EditForm>
+
+
+@if (borrowings != null)
+{
+    <div style="margin-top: 25px;"></div>
+    <div class="d-flex justify-content-between mb-3">
+        <h3>Borrowings</h3>
+      
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Borrow Date</th>
+                <th>Return Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var borrowing in borrowings)
+            {
+                <tr class="@GetBorrowingRowClass(borrowing.ReturnDate)">
+                    <td>@borrowing.Title</td>
+                    <td>@borrowing.BorrowDate.ToShortDateString()</td>
+                    <td>@borrowing.ReturnDate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private User user = new User();
+
+    private List<Book> books;
+    private List<BookDetails> bookDetails = new List<BookDetails>();
+    private List<string> debugMessages = new List<string>();
+
+    private List<User>? users;
+
+    [Parameter]
+     public int Id { get; set; }
+
+    private int userId;
+
+    //private User user;
+
+    private List<Borrow>? borrowings;
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = await CustomerService.GetUsers();
+        Console.WriteLine(users);
+    }
+
+    private async Task AddNewUser()
+    {
+        if (users != null)
+        {
+            Console.WriteLine(user.Name);
+
+            foreach (var users in users)
+            {
+                if (users.Name == user.Name)
+                {
+                    userId = users.ReaderNumber;
+                    user = await CustomerService.GetSingleUser(userId);
+                    await LoadBorrowings();
+
+                   Console.WriteLine("UserFound: " + user.Name);
+                    break;
+
+                }
+            }
+
+            Console.WriteLine("No such user found by that name");
+
+        }
+        else
+        {
+            Console.WriteLine("There are no users");
+        }
+
+    }
+
+    private async Task LoadBorrowings()
+    {
+        borrowings = await CustomerService.GetBorrowsForUser(userId);
+    }
+
+    private string GetBorrowingRowClass(DateTime returnDate)
+    {
+        return returnDate < DateTime.Now ? "table-danger" : string.Empty;
+    }
+ 
+}
+
+
+    
+@code {/*
+    private List<Book> books;
+    private List<BookDetails> bookDetails = new List<BookDetails>();
+    private List<string> debugMessages = new List<string>();
+
+    [Parameter]
+    public int Id { get; set; }
+
+    private User user;
+
+    private List<Borrow>? borrowings;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        try
+        {
+            books = await CustomerService.GetBooks();
+            await GetBookDetails();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to retrieve books: {ex.Message}");
+        }
+    }
+
+    private async Task GetBorrows()
+    {
+        await CustomerService.GetSingleUser(Id);
+        await LoadBorrowings();
+    }
+
+   
+
+    private async Task GetBookDetails()
+    {
+        foreach (var book in books)
+        {
+            BookDetails details = await CustomerService.GetSingleBook(book.InventoryNumber);
+            bookDetails.Add(details);
+        }
+    }
+
+    private async Task LoadBorrowings()
+    {
+        borrowings = await CustomerService.GetBorrowsForUser(Id);
+    }
+
+    private string GetBorrowingRowClass(DateTime returnDate)
+    {
+        return returnDate < DateTime.Now ? "table-danger" : string.Empty;
+    }
+    */
 }

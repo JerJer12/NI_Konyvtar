@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1k/8uacOyl80vQP135FUtncjx1ZK2U4o4rA6IqBy9Scm5lPTrfn0FzUQy4xF5q9BjRI6g+tam96UNHyfOvnqSw==",
+  "dgSpecHash": "sX7vWQ1KJ8tj5kINEuLWg6ryypnym8gjMB5MhtPiiDq4gLMSUDSzY+9d0d2z4tHQOALvzfvcA9yz6sB6irFjug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
+  "projectFilePath": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

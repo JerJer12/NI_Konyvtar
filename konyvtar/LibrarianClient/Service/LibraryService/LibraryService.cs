@@ -26,10 +26,10 @@ namespace LibrarianClient.Service.LibraryService
 
         public Task<List<User>?> GetUsers() => _http.GetFromJsonAsync<List<User>>("https://localhost:7081/users");
 
-        public Task AddUser(User user) => _http.PostAsJsonAsync("http://localhost:7081/users", user);
+        public Task AddUser(User user) => _http.PostAsJsonAsync("https://localhost:7081/users", user);
 
-        public Task UpdateUser(int id, User user) => _http.PutAsJsonAsync($"http://localhost:7081/users/{id}", user);
+        public Task UpdateUser(int id, User user) => _http.PutAsJsonAsync($"https://localhost:7081/users/{id}", user);
 
-        public Task DeleteUser(int id) => _http.DeleteAsync($"http://localhost:7081/users/{id}");
+        public Task DeleteUser(int id) => _http.DeleteAsync($"https://localhost:7081/users/{id}");
     }
 }

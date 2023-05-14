@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryApplication.Contract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibrarianClient", "LibrarianClient\LibrarianClient.csproj", "{B68A7013-3157-4151-9627-3FBE18BF88B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerClient", "CustomerClient\CustomerClient.csproj", "{D0CD242A-1804-4DF6-98A6-C21C4C44588F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B68A7013-3157-4151-9627-3FBE18BF88B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B68A7013-3157-4151-9627-3FBE18BF88B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B68A7013-3157-4151-9627-3FBE18BF88B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0CD242A-1804-4DF6-98A6-C21C4C44588F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CD242A-1804-4DF6-98A6-C21C4C44588F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CD242A-1804-4DF6-98A6-C21C4C44588F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CD242A-1804-4DF6-98A6-C21C4C44588F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

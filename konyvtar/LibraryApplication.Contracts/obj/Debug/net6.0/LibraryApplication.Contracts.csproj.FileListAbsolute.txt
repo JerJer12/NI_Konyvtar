@@ -22,3 +22,15 @@ C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Cont
 C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\refint\LibraryApplication.Contracts.dll
 C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.pdb
 C:\Users\zsani\Downloads\c#\projekt\NI_Konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\ref\LibraryApplication.Contracts.dll
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\bin\Debug\net6.0\LibraryApplication.Contracts.deps.json
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\bin\Debug\net6.0\LibraryApplication.Contracts.dll
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\bin\Debug\net6.0\LibraryApplication.Contracts.pdb
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.csproj.AssemblyReference.cache
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.AssemblyInfoInputs.cache
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.AssemblyInfo.cs
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.csproj.CoreCompileInputs.cache
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.dll
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\refint\LibraryApplication.Contracts.dll
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\LibraryApplication.Contracts.pdb
+C:\ni_konyvtar\konyvtar\LibraryApplication.Contracts\obj\Debug\net6.0\ref\LibraryApplication.Contracts.dll

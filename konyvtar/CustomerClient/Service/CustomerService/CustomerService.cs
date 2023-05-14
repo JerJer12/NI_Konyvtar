@@ -25,6 +25,10 @@ namespace CustomerClient.Service.CustomerService
 
         public Task DeleteBorrow(int id) => _http.DeleteAsync($"https://localhost:7081/borrows/{id}");
 
+        public Task<User?> GetSingleUser(int id) => _http.GetFromJsonAsync<User>($"https://localhost:7081/users/{id}");
+
+        public Task<List<User>?> GetUsers() => _http.GetFromJsonAsync<List<User>>("https://localhost:7081/users");
+
 
     }
 }

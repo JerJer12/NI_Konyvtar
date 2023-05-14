@@ -7338,19 +7338,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zsani\\.nuget\\packages\\": {}
+    "C:\\Users\\terem\\.nuget\\packages\\": {},
+    "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
+      "projectUniqueName": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
       "projectName": "LibraryApplication.Api",
-      "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
-      "packagesPath": "C:\\Users\\zsani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication\\obj\\",
+      "projectPath": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication\\LibraryApplication.Api.csproj",
+      "packagesPath": "C:\\Users\\terem\\.nuget\\packages\\",
+      "outputPath": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\zsani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\terem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7364,8 +7369,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
-              "projectPath": "C:\\Users\\zsani\\Downloads\\c#\\projekt\\NI_Konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
+            "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj": {
+              "projectPath": "C:\\ni_konyvtar\\konyvtar\\LibraryApplication.Contracts\\LibraryApplication.Contracts.csproj"
             }
           }
         }
@@ -7422,12 +7427,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x86",
-            "version": "[6.0.16, 6.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7436,7 +7435,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
