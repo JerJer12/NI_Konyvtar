@@ -28,17 +28,17 @@ else
             </tr>
         </thead>
         <tbody>
-            @for (int i = 0; i < books.Count; i++)
+            @foreach (var book in books.OrderBy(b => bookDetails[books.IndexOf(b)].returnDate))
             {
                 <tr>
-                    <td>@books[i].Title</td>
-                    <td>@books[i].Author</td>
-                    <td>@books[i].Publisher</td>
-                    <td>@books[i].InventoryNumber</td>
-                    <td>@books[i].PublicationYear</td>
-                    <td>@bookDetails[i].status</td>
-                    <td>@(bookDetails[i].status == "in" ? "-" : bookDetails[i].borrowerName)</td>
-                    <td>@(bookDetails[i].status == "in" ? "-" : bookDetails[i].returnDate.ToString("yyyy-MM-dd"))</td>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.Publisher</td>
+                    <td>@book.InventoryNumber</td>
+                    <td>@book.PublicationYear</td>
+                    <td>@bookDetails[books.IndexOf(book)].status</td>
+                    <td>@(bookDetails[books.IndexOf(book)].status == "in" ? "-" : bookDetails[books.IndexOf(book)].borrowerName)</td>
+                    <td>@(bookDetails[books.IndexOf(book)].status == "in" ? "-" : bookDetails[books.IndexOf(book)].returnDate.ToString("yyyy-MM-dd"))</td>
                 </tr>
             }
         </tbody>

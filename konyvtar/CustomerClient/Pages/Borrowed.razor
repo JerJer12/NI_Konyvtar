@@ -9,6 +9,8 @@
 
 <h3>Borrowed</h3>
 
+Enter your name to see your borrowed books
+
 
 <EditForm Model="@user" OnValidSubmit="@AddNewUser">
     
@@ -41,11 +43,10 @@
                 <th>Title</th>
                 <th>Borrow Date</th>
                 <th>Return Date</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var borrowing in borrowings)
+            @foreach (var borrowing in borrowings.OrderBy(b => b.BorrowDate))
             {
                 <tr class="@GetBorrowingRowClass(borrowing.ReturnDate)">
                     <td>@borrowing.Title</td>
