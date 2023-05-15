@@ -34,6 +34,13 @@
 
 Enter your name to see your borrowed books.
 
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
 
 <EditForm Model="@user" OnValidSubmit="@AddNewUser">
     
@@ -91,10 +98,15 @@ Enter your name to see your borrowed books.
 
     private List<User>? users;
 
+    private string errorMessage;
+
+
     [Parameter]
-     public int Id { get; set; }
+    public int Id { get; set; }
 
     private int userId;
+
+    private bool userFound = false;
 
     //private User user;
 
@@ -108,6 +120,7 @@ Enter your name to see your borrowed books.
 
     private async Task AddNewUser()
     {
+        userFound = false;
         if (users != null)
         {
             Console.WriteLine(user.Name);
@@ -120,18 +133,24 @@ Enter your name to see your borrowed books.
                     user = await CustomerService.GetSingleUser(userId);
                     await LoadBorrowings();
 
-                   Console.WriteLine("UserFound: " + user.Name);
+                    Console.WriteLine("UserFound: " + user.Name);
+                    errorMessage = null;
+                    userFound = true;
                     break;
 
                 }
             }
-
-            Console.WriteLine("No such user found by that name");
-
+            if(!userFound){
+                // Console.WriteLine("No such user found by that name");
+                errorMessage = "No user was found by that name";
+                Console.WriteLine(errorMessage);
+            }
+            
         }
         else
         {
-            Console.WriteLine("There are no users");
+            Console.WriteLine("There are no users in the database");
+            errorMessage = "There are no users";
         }
 
     }
