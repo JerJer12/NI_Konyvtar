@@ -33,6 +33,13 @@
             </dd>
         </dl>
 
+        @if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
         <div>
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-danger" @onclick="DeleteUser">Delete</button>
@@ -51,6 +58,8 @@ else
 
     private User user;
 
+     private string errorMessage;
+
     protected override async Task OnInitializedAsync()
     {
         user = await LibraryService.GetSingleUser(Id);
@@ -59,8 +68,14 @@ else
 
     private async Task SaveUser()
     {
-        await LibraryService.UpdateUser(Id, user);
-        NavigationManager.NavigateTo($"/members/{Id}");
+        if (user.BirthDate < DateTime.Today.AddDays(-1))
+        {
+            await LibraryService.UpdateUser(Id, user);
+            NavigationManager.NavigateTo($"/members/{Id}");
+        }
+        else{
+            errorMessage = "Invalid Date";
+        }
     }
 
     private async Task DeleteUser()

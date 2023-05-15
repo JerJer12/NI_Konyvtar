@@ -129,7 +129,7 @@ namespace LibrarianClient.Tests
         {
             User newUser = new User
             {
-                Name = "john!",
+                Name = "john",
                 Address = "Main Street",
                 BirthDate = DateTime.Today.AddDays(-1)
             };
