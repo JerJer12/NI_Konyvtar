@@ -15,10 +15,6 @@ namespace LibraryApplication.Api.Controllers
             this._libraryContext = libraryContext;
         }
 
-        /// <summary>
-        ///     All the users with their datas.
-        /// </summary>
-        /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> Get()
         {
@@ -26,11 +22,6 @@ namespace LibraryApplication.Api.Controllers
             return this.Ok(users);
         }
 
-        /// <summary>
-        ///     Gets a single users data.
-        /// </summary>
-        /// <param name="id">Users id.</param>
-        /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult> Get(int id)
         {
